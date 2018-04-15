@@ -4,7 +4,7 @@
 class Worker {
   public:
     virtual    void setup() = 0;
-    virtual    void lopp() = 0;
+    virtual    void loop() = 0;
 
 };
 #endif

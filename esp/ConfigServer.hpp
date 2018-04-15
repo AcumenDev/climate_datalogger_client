@@ -4,9 +4,9 @@
 #include "Worker.hpp"
 
 #include <ESP8266WiFi.h>
-class ConfigServer  {
+class ConfigServer : public Worker {
   public:
-    void setup();
-    void loop();
+    void setup() override;
+    void loop() override;
 };
 #endif

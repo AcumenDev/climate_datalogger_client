@@ -4,6 +4,9 @@
 
 #include <ESP8266WiFi.h>
 #include <Adafruit_BME280.h>
+#include "TemperatureProtocol.pb.h"
+
+
 #include "Worker.hpp"
 
 #define BME_280_ADDRESS 0x76
@@ -12,11 +15,11 @@
 
 
 #define ESP_SSID "vst" // Your network name here
-#define ESP_PASS "" // Your network password here
+#define ESP_PASS "3132132" // Your network password here
 
 #define HOST     "192.168.1.54"     // Host to contact  192.168.1.54
 #define PAGE "/api/input" // Web page to request  /api/input
-#define PORT     8080                     // 80 = HTTP default port
+#define PORT     9999                     // 80 = HTTP default port
 
 #define LED_PIN  13
 
@@ -26,7 +29,7 @@
 #define NUM 1
 
 
-class DataLogger  {
+class DataLogger : public Worker {
 
     Adafruit_BME280 bme;
 
@@ -35,8 +38,8 @@ class DataLogger  {
 
 
   public:
-    void setup() ;
-    void loop();
+    void setup() override;
+    void loop() override;
   private:
     void connectToWifi() ;
     void initBME();
