@@ -12,6 +12,26 @@ bool encode_string_key(pb_ostream_t *stream, const pb_field_t *field, void *cons
 }
 
 
+
+bool encode_baseMessage(pb_ostream_t *stream, const pb_field_t messagetype[], const void *message) {
+    const pb_field_t *field;
+    for (field = BaseMessage_fields; field->tag != 0; field++) {
+        if (field->ptr == messagetype) {
+            /* This is our field, encode the message using it. */
+            if (!pb_encode_tag_for_field(stream, field)) {
+                return false;
+            }
+
+            return pb_encode_submessage(stream, messagetype, message);
+        }
+    }
+
+    /* Didn't find the field for messagetype */
+    return false;
+}
+
+
+
 void DataLogger::setup() {
     Serial.println("Start dataLoger");
 
@@ -58,15 +78,6 @@ void DataLogger::loop() {
     authRequest.apiKey.funcs.encode = encode_string_key;
 
 
-    BaseMessage baseMessage = BaseMessage_init_default;
-
-    baseMessage.type = PacketType::PacketType_authRequest;
-
-
-
-
-    baseMessage.authRequest = authRequest;
-
 
     uint8_t buffer[100];
     size_t message_length;
@@ -74,7 +85,7 @@ void DataLogger::loop() {
 
     pb_ostream_t stream = pb_ostream_from_buffer(buffer, sizeof(buffer));
 
-    status = pb_encode(&stream, BaseMessage_fields, &baseMessage);
+    status = encode_baseMessage(&stream, AuthRequest_fields, &authRequest);
     message_length = stream.bytes_written;
 
 
