@@ -10,13 +10,15 @@ set(CMAKE_CXX_STANDARD 11)
 include_directories(.)
 
 add_executable(test_protobuf main.cpp
-        pb.h
-        pb_common.c
-        pb_common.h
-        pb_decode.c
-        pb_decode.h
-        pb_encode.c
-        pb_encode.h
-        TemperatureProtocol.pb.c
-        TemperatureProtocol.pb.h
+        pb/pb.h
+        pb/pb_common.c
+        pb/pb_common.h
+        pb/pb_decode.c
+        pb/pb_decode.h
+        pb/pb_encode.c
+        pb/pb_encode.h
+        pb/BaseMessage.pb.c
+        pb/BaseMessage.pb.h
+        pb/Temperature.pb.c
+        pb/Temperature.pb.h
 )
