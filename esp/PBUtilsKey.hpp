@@ -9,7 +9,8 @@
 #include "pb_common.h"
 #include "pb_decode.h"
 #include "pb_encode.h"
-#include "TemperatureProtocol.pb.h"
+#include "BaseMessage.pb.h"
+#include "Temperature.pb.h"
 /*
 bool encode_string_key(pb_ostream_t *stream, const pb_field_t *field, void *const *arg);*/
 

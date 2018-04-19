@@ -4,7 +4,8 @@
 
 #include <ESP8266WiFi.h>
 #include <Adafruit_BME280.h>
-#include "TemperatureProtocol.pb.h"
+#include "Temperature.pb.h"
+#include "BaseMessage.pb.h"
 #include "PBUtilsKey.hpp"
 
 #include "Worker.hpp"

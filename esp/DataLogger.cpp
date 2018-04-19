@@ -70,12 +70,21 @@ void DataLogger::loop() {
 
 /*  Serial.println( buffer);*/
 
-    AuthRequest authRequest = AuthRequest_init_default;
+    Auth auth = Auth_init_default;
 
 
-    authRequest.type = 1;
-    authRequest.version = 1;
-    authRequest.apiKey.funcs.encode = encode_string_key;
+    auth.type = 1;
+    auth.has_type = true;
+    auth.version = 1;
+    auth.has_version = true;
+    auth.apiKey.funcs.encode = encode_string_key;
+
+
+
+    BaseMessage baseMessage = BaseMessage_init_default;
+
+    baseMessage.auth = auth;
+    baseMessage.has_auth = true;
 
 
 
@@ -85,7 +94,7 @@ void DataLogger::loop() {
 
     pb_ostream_t stream = pb_ostream_from_buffer(buffer, sizeof(buffer));
 
-    status = encode_baseMessage(&stream, AuthRequest_fields, &authRequest);
+     status = pb_encode(&stream, BaseMessage_fields, &baseMessage);
     message_length = stream.bytes_written;
 
 
