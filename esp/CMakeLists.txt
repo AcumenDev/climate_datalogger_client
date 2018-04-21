@@ -3,6 +3,7 @@ project(esp)
 
 set(CMAKE_CXX_STANDARD 11)
 
+
 include_directories(.)
 
 add_executable(esp
@@ -20,6 +21,8 @@ add_executable(esp
         pb_decode.h
         pb_encode.c
         pb_encode.h
-        TemperatureProtocol.pb.c
-        TemperatureProtocol.pb.h
+        Temperature.pb.h
+        Temperature.pb.c
+        BaseMessage.pb.h
+        BaseMessage.pb.c
         Worker.hpp)
