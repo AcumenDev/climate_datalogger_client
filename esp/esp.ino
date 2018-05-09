@@ -7,6 +7,7 @@ bool runType = 1;
 
 void setup() {
     Serial.begin(115200);
+    Serial.setDebugOutput(true);
     Serial.println();
     pinMode(14, INPUT_PULLUP);
     runType = digitalRead(14);

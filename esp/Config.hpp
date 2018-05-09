@@ -2,6 +2,13 @@
 #define CONFIG_HPP
 
 
+////Страница конфигурации
+
+#define AP_WIFI_NETWORK_SSID "AcumenTermostat"
+#define AP_WIFI_NETWORK_PASSWORD  "9876543210"
+
+////Страница конфигурации
+
 
 
 
@@ -13,4 +20,4 @@
 
 
 
-#endif 
+#endif
