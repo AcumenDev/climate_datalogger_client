@@ -28,7 +28,7 @@ bool DataLoggerClient::auth(int type, int version) {
 
 bool DataLoggerClient::connectWifi() {
 
-    WiFi.begin(ESP_SSID, ESP_PASS);
+    WiFi.begin(EEPROMUtils::readWifiName().c_str(), EEPROMUtils::readWifiPasswd().c_str());
 
     Serial.print("Connecting to wifi");
     while (WiFi.status() != WL_CONNECTED) {
@@ -43,8 +43,15 @@ bool DataLoggerClient::connectWifi() {
 }
 
 bool DataLoggerClient::connectServer() {
-    Serial.printf("\n[Connecting to %s ... ", HOST);
-    if (tcpClient.connect(HOST, PORT)) {
+    String url = EEPROMUtils::readUrl();
+
+    Serial.printf("\n[Connecting to %s ... ", url.c_str());
+    int spliter = url.indexOf(':');
+    String host = url.substring(0, spliter);
+    String port = url.substring(spliter + 1, url.length());
+
+    Serial.printf("\n[Connecting to host %s port  %s %d ... ", host.c_str(), port.c_str(), port.toInt());
+    if (tcpClient.connect(host.c_str(), port.toInt())) {
         Serial.println("connected]");
         return true;
     }
@@ -92,13 +99,18 @@ bool DataLoggerClient::send(BaseMessage *baseMessage) {
 }
 
 bool DataLoggerClient::encodeApiKey(pb_ostream_t *stream, const pb_field_t *field, void *const *arg) {
-    const char str[] = "53ae8ff6-3d8c-11e8-b467-0ed5f89f718b";
-    Serial.print("apiKey= ");
-    Serial.print(str);
+    String apiKey = EEPROMUtils::readApiKey();
+    const char * str = apiKey.c_str();//   "53ae8ff6-3d8c-11e8-b467-0ed5f89f718b";
+
+   /* Serial.print("String apiKey=");
+    Serial.println(apiKey);*/
+
+    Serial.print("apiKey=");
+    Serial.println(str);
     if (!pb_encode_tag_for_field(stream, field))
         return false;
 
-    return pb_encode_string(stream, (uint8_t *) str, strlen(str));
+    return pb_encode_string(stream, (uint8_t *)  str, strlen(str));
 }
 
 

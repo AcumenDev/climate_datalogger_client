@@ -25,4 +25,5 @@ add_executable(esp
         Temperature.pb.c
         BaseMessage.pb.h
         BaseMessage.pb.c
-        Worker.hpp)
+        Worker.hpp
+        ConfigPage.hpp)

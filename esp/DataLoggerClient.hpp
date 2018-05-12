@@ -4,6 +4,7 @@
 #include <WiFiClientSecure.h>
 #include <ESP8266WiFi.h>
 #include "PBUtilsKey.hpp"
+#include "EEPROMUtils.hpp"
 
 #define ESP_SSID "vst" // Your network name here
 #define ESP_PASS "2365hj6578" // Your network password here

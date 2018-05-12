@@ -1,6 +1,7 @@
 #include "ConfigServer.hpp"
 #include "DataLogger.hpp"
 #include "DataLoggerClient.hpp"
+#include "EEPROMUtils.hpp"
 
 Worker *work;
 bool runType = 1;
@@ -11,7 +12,7 @@ void setup() {
     Serial.println();
     pinMode(14, INPUT_PULLUP);
     runType = digitalRead(14);
-
+    EEPROMUtils::begin();
     if (runType) {
         work = new DataLogger(new DataLoggerClient());
     } else {

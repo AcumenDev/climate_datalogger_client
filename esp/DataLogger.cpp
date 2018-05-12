@@ -2,13 +2,15 @@
 
 void DataLogger::setup() {
     Serial.println("Start dataLoger");
+    WiFi.persistent(false);
+    WiFi.mode(WIFI_STA);
     initBME();
     //connectToWifi();
 }
 
 
 void DataLogger::loop() {
-    if (!isWorkTime(lastTime, millis(), 1000 * 30)) {
+    if (!isWorkTime(lastTime, millis(), 1000 * 60)) {
         return;
     }
 
@@ -23,17 +25,6 @@ void DataLogger::loop() {
     Serial.print("P: ");
     Serial.println(pressure);
 
-/*  char buffer[95];
-  sprintf(buffer, "{\"u\":\"%s\",\"t\":\"%d\",\"r\":\"%d\",\"n\":\"%d\",\"d\":{\"t\":\"%s\",\"h\":\"%s\",\"p\":\"%s\"}}",
-          USER,
-          TYPE,
-          ROOM,
-          NUM,
-          String(temp).c_str(),
-          String(humidity).c_str(),
-          String(pressure).c_str());*/
-
-/*  Serial.println( buffer);*/
 
     Notify notify = Notify_init_zero;
     notify.current = temp;
@@ -45,42 +36,9 @@ void DataLogger::loop() {
 
     if (client->connect()) {
         client->send(&temperature);
-    }else{
+    } else {
         Serial.println("Error connection");
     }
-    /* Serial.printf("\n[Connecting to %s ... ", HOST);
-     if (client.connect(HOST, PORT)) {
-         Serial.println("connected]");
-
-         Serial.println("[Sending a request]");
-         uint8_t buf[] = {1};
-     //    client.write((const uint8_t *) buffer, message_length);
-         //    client.print(String("POST /api/input") + " HTTP/1.1\r\n" +
-         //                 "Host: " + HOST + ":" + PORT + "\r\n" +
-         //                 "Connection: close\r\n"
-         //                 "Content-Type: application/json\r\n"
-         //                 "Content-Length: " + strlen(buffer) +
-         //                 "\r\n\r\n" + buffer + "\r\n\r\n");
-         //    Serial.print(String("POST /api/input") + " HTTP/1.1\r\n" +
-         //                 "Host: " + HOST + ":" + PORT + "\r\n" +
-         //                 "Connection: close\r\n"
-         //                 "Content-Type: application/json\r\n"
-         //                 "Content-Length: " + strlen(buffer) +
-         //                 "\r\n\r\n" + buffer + "\r\n\r\n");
-
-         Serial.println("[Response:]");
-         while (client.connected()) {
-             if (client.available()) {
-                 String line = client.readStringUntil('\n');
-                 Serial.println(line);
-             }
-         }
-         client.stop();
-         Serial.println("\n[Disconnected]");
-     } else {
-         Serial.println("connection failed!]");
-         client.stop();
-     }*/
 
     lastTime = millis();
 }

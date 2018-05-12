@@ -1,19 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>TermostatConfig</title>
-</head>
-<body>
 <h3>Config page</h3>
-<form action="/update" method="post">
+<form action="/" method="post">
     <table>
         <tr>
             <td>Wifi name:</td>
-            <td><input type="text" size="40" name="wifi_name"></td>
+            <td><input type="text" size="40" name="wifi_name" value=""></td>
         </tr>
         <tr>
             <td>Wifi password:</td>
-            <td><input type="text" size="40" name="wifi_passwd"></td>
+            <td><input type="text" size="40" name="wifi_passwd" value=""></td>
         </tr>
         <tr>
             <td colspan="2">
@@ -22,11 +16,11 @@
         </tr>
         <tr>
             <td>Url:</td>
-            <td><input type="text" size="40" name="url"></td>
+            <td><input type="text" size="40" name="url" value=""></td>
         </tr>
         <tr>
             <td>ApiKey:</td>
-            <td><input type="text" size="40" name="apikey"></td>
+            <td><input type="text" size="40" name="apikey" value=""></td>
         </tr>
         <tr>
             <td colspan="2">
@@ -34,11 +28,9 @@
             </td>
         </tr>
         <tr>
-            <td colspan="2">To enable collect of indications and control?<input type="checkbox" name="enable" checked></td>
+            <td colspan="2">To enable collect of indications and control?<input type="checkbox" name="active" checked="checked" ></td>
         </tr>
     </table>
     <br>
     <input type="submit" value="Save">
 </form>
-</body>
-</html>

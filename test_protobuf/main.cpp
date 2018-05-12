@@ -171,11 +171,11 @@ size_t notify2(uint8_t *buffer, size_t bufsize) {
 int main() {
     std::cout << "Start" << std::endl;
 
-/*    {
+    {
         uint8_t bufferAuth[150];
         size_t sizeAuth = auth(bufferAuth, sizeof(bufferAuth));
         printBytes(bufferAuth, sizeAuth);
-    }*/
+    }
 
 /*    {
         uint8_t bufferNotify[128];
@@ -184,12 +184,12 @@ int main() {
 
     }*/
 
-    {
+/*    {
         uint8_t bufferNotify[128];
         size_t sizeNotify = notify2(bufferNotify, sizeof(bufferNotify));
         printBytes(bufferNotify, sizeNotify);
 
-    }
+    }*/
 
 
     return 0;
