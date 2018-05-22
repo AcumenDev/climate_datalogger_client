@@ -26,4 +26,4 @@ add_executable(esp
         BaseMessage.pb.h
         BaseMessage.pb.c
         Worker.hpp
-        ConfigPage.hpp)
+        ConfigPage.hpp Display.cpp Display.hpp TemperatureSensor.cpp TemperatureSensor.hpp)

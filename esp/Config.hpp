@@ -12,6 +12,8 @@
 
 
 
+#define SENSOR_PIN 1
+
 
 #define SENSOR_TYPE 1
 #define SENSOR_VERSION 1
