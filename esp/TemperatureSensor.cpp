@@ -7,10 +7,12 @@
 
 
 TemperatureSensor::TemperatureSensor(uint8_t pin) {
-    searchSensors();
+
     this->oneWire = new OneWire(pin);
+    searchSensors();
     this->ds = new DallasTemperature(oneWire);
     this->ds->begin();
+
 }
 
 float TemperatureSensor::getTemperature() {
@@ -20,21 +22,23 @@ float TemperatureSensor::getTemperature() {
 
 const uint8_t *TemperatureSensor::searchSensors() {
 
-    DEBUG_PRINTLN("")
+
+    Serial.print("TemperatureSensor\nsearch ");
     int number = 0;
     while (oneWire->search(sensorAdr)) {
         ++number;
-        DEBUG_PRINT((int) number);
-        DEBUG_PRINT(" : ")
+        Serial.print(number);
+        Serial.print(" : ");
         for (int i = 0; i < 8; i++) {
-            DEBUG_PRINT(' ')
-            DEBUG_PRINT(sensorAdr[i], HEX)
+            Serial.print(" ");
+            Serial.print(sensorAdr[i], HEX);
+
         }
-        DEBUG_PRINTLN("")
+        Serial.println(" ");
         //return addr;
     }
 
     if (number == 0) {
-        DEBUG_PRINTLN("Sensors not found!")
+        Serial.println("Sensors not found!");
     }
 }

@@ -12,7 +12,10 @@
 
 
 
-#define SENSOR_PIN 1
+#define SENSOR_PIN 10
+
+
+#define CLIMATE_DEBUG 1
 
 
 #define SENSOR_TYPE 1

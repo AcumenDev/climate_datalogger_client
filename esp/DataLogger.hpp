@@ -3,28 +3,26 @@
 
 
 #include <ESP8266WiFi.h>
-#include <Adafruit_BME280.h>
 #include "Temperature.pb.h"
 #include "BaseMessage.pb.h"
 #include "PBUtilsKey.hpp"
 
 #include "Worker.hpp"
 #include "DataLoggerClient.hpp"
-
-#define BME_280_ADDRESS 0x76
+#include "Value.hpp"
+#include "TemperatureSensor.hpp"
 
 
 class DataLogger : public Worker {
 
 private:
+    Value value;
 
-    Adafruit_BME280 bme;
 
     long lastTime = 0;
     DataLoggerClient *client;
+    TemperatureSensor * temperatureSensor;
 
-
-    void initBME();
 
     bool isWorkTime(unsigned long prevMillis, unsigned long currentMillis, int interval);
 

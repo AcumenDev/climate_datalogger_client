@@ -1,10 +1,10 @@
 #include "DataLogger.hpp"
+#include "Config.hpp"
 
 void DataLogger::setup() {
     Serial.println("Start dataLoger");
     WiFi.persistent(false);
     WiFi.mode(WIFI_STA);
-    initBME();
     //connectToWifi();
 }
 
@@ -14,20 +14,15 @@ void DataLogger::loop() {
         return;
     }
 
+    value.setValue(temperatureSensor->getTemperature());
 
-    float temp = bme.readTemperature();
-    float humidity = bme.readHumidity();
-    float pressure = bme.readPressure();
     Serial.print("T: ");
-    Serial.println(temp);
-    Serial.print("H: ");
-    Serial.println(humidity);
-    Serial.print("P: ");
-    Serial.println(pressure);
+    Serial.println(value.getValue());
+
 
 
     Notify notify = Notify_init_zero;
-    notify.current = temp;
+    notify.current = value.getValue();
     notify.has_current = true;
 
     Temperature temperature = Temperature_init_zero;
@@ -51,12 +46,7 @@ bool DataLogger::isWorkTime(unsigned long prevMillis, unsigned long currentMilli
     return (currentMillis - prevMillis) >= interval;
 }
 
-void DataLogger::initBME() {
-    bool status = bme.begin(BME_280_ADDRESS);
-    delay(500);
-    if (!status) {
-        Serial.println("Could not find a valid BME280 sensor, check wiring!");
-    }
-}
+DataLogger::DataLogger(DataLoggerClient *client) : client(client) {
+    temperatureSensor = new TemperatureSensor(SENSOR_PIN);
 
-DataLogger::DataLogger(DataLoggerClient *client) : client(client) {}
+}

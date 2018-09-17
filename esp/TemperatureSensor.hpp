@@ -7,17 +7,18 @@
 
 #include <OneWire.h>
 #include <DallasTemperature.h>
-#include "DebugUtils.hpp"
+
 
 class TemperatureSensor {
     OneWire *oneWire;
     DallasTemperature *ds;
     uint8_t sensorAdr[8];
 
-    TemperatureSensor(uint8_t pin);
 
     const uint8_t *searchSensors();
 
+public:
+    TemperatureSensor(uint8_t pin);
 
     float getTemperature();
 };

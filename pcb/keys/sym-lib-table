@@ -1,0 +1,6 @@
+(sym_lib_table
+  (lib (name client-rescue)(type Legacy)(uri ${KIPRJMOD}/client-rescue.lib)(options "")(descr ""))
+  (lib (name power1)(type Legacy)(uri /home/vst/soft/kicad_lib/backport-5.0.0/kicad-symbols-4-backport-5.0.0/power.lib)(options "")(descr ""))
+  (lib (name 74xx1)(type Legacy)(uri /home/vst/soft/kicad_lib/backport-5.0.0/kicad-symbols-4-backport-5.0.0/74xx.lib)(options "")(descr ""))
+  (lib (name tinkerforge)(type Legacy)(uri /home/vst/Downloads/kicad-libraries-master/tinkerforge.lib)(options "")(descr ""))
+)
