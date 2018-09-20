@@ -26,7 +26,7 @@
     )
     (via "Via[0-1]_500:400_um")
     (rule
-      (width 250)
+      (width 300)
       (clearance 300.1)
       (clearance 300.1 (type default_smd))
       (clearance 75 (type smd_smd))
@@ -34,28 +34,28 @@
   )
   (placement
     (component Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder
-      (place C1 109002 -46990 back 180 (PN 100P))
-      (place C2 109002 -62230 back 0 (PN 100P))
-      (place C4 109002 -58420 back 180 (PN 104))
-      (place R1 109002 -50800 back 180 (PN 10K))
-      (place R2 109002 -54610 back 180 (PN 10K))
+      (place C4 100494 -62230 back 180 (PN 104))
+      (place C1 109728 -37628.5 back 270 (PN 100P))
+      (place C2 101346 -38009.5 back 270 (PN 100P))
+      (place R1 113157 -37719 back 90 (PN 10K))
+      (place R2 105283 -37846 back 90 (PN 10K))
     )
     (component "Capacitor_Tantalum_SMD:CP_EIA-3528-12_Kemet-T_Pad1.50x2.35mm_HandSolder"
-      (place C3 116485 -52070 back 270 (PN 100uF))
+      (place C3 100711 -66040 back 180 (PN 100uF))
     )
     (component "Connector_JST:JST_PH_B4B-PH-SM4-TB_1x04-1MP_P2.00mm_Vertical"
-      (place J1 99060 -50800 back 270 (PN Conn_01x04_Male))
+      (place J1 102235 -52705 back 90 (PN Conn_01x04_Male))
     )
     (component Button_Switch_THT:SW_PUSH_6mm_H9.5mm
-      (place SW1 154940 -38100 front 0 (PN SW_Set))
-      (place SW2 154940 -49530 front 0 (PN SW_Plus))
-      (place SW3 154940 -60960 front 0 (PN SW_Minus))
+      (place SW1 160020 -38100 front 270 (PN SW_Set))
+      (place SW2 160020 -49530 front 270 (PN SW_Plus))
+      (place SW3 160020 -60960 front 270 (PN SW_Minus))
     )
     (component tinkerforge:SOP20
-      (place U1 140970 -52070 back 90 (PN TM1637))
+      (place U1 140462 -52451 back 0 (PN TM1637))
     )
     (component "Display_7Segment:CA56-12SRWA"
-      (place U2 114300 -59690 front 90 (PN "CA56-12SEKWA"))
+      (place U2 115443 -60706 front 90 (PN "CA56-12SEKWA"))
     )
     (component MountingHole:MountingHole_2.2mm_M2
       (place REF3 166370 -35560 front 0 (PN MountingHole_2.2mm_M2))
@@ -308,10 +308,10 @@
   )
   (network
     (net VCC
-      (pins C3-1 C4-1 J1-3 R1-2 R2-2 U1-16)
+      (pins C4-1 C3-1 J1-3 R1-2 R2-2 U1-16)
     )
     (net GNDREF
-      (pins C1-1 C2-1 C3-2 C4-2 J1-4 U1-1)
+      (pins C4-2 C1-1 C2-1 C3-2 J1-4 U1-1)
     )
     (net "Net-(SW1-Pad1)"
       (pins SW1-1 SW1-1@1 SW2-1 SW2-1@1 SW3-1 SW3-1@1 U1-19)
@@ -376,7 +376,7 @@
         (use_via Via[0-1]_500:400_um)
       )
       (rule
-        (width 250)
+        (width 300)
         (clearance 300.1)
       )
     )
