@@ -11,8 +11,11 @@
 
 
 
+#define DISPLAY_CLK_PIN 10
+#define DISPLAY_DIO_PIN 9
 
-#define SENSOR_PIN 10
+
+#define SENSOR_PIN 14
 
 
 #define CLIMATE_DEBUG 1

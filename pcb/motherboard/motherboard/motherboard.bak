@@ -15,114 +15,462 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L ESP8266:RobotDyn_NodeMCU U?
-U 1 1 5BA67355
-P 6400 3300
-F 0 "U?" H 6400 4387 60  0000 C CNN
-F 1 "RobotDyn_NodeMCU" H 6400 4281 60  0000 C CNN
-F 2 "" H 5800 2450 60  0000 C CNN
-F 3 "" H 5800 2450 60  0000 C CNN
-	1    6400 3300
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector_Generic:Conn_01x04 J?
+L Connector_Generic:Conn_01x04 J1
 U 1 1 5BA67579
-P 7700 1850
-F 0 "J?" H 7620 1425 50  0000 C CNN
-F 1 "Display_01x04" H 7620 1516 50  0000 C CNN
-F 2 "" H 7700 1850 50  0001 C CNN
-F 3 "~" H 7700 1850 50  0001 C CNN
-	1    7700 1850
+P 3600 1950
+F 0 "J1" V 3800 1900 50  0000 C CNN
+F 1 "Display_01x04" V 3700 1900 50  0000 C CNN
+F 2 "Connector_JST:JST_PH_B4B-PH-K_1x04_P2.00mm_Vertical" H 3600 1950 50  0001 C CNN
+F 3 "~" H 3600 1950 50  0001 C CNN
+	1    3600 1950
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Connector_Generic:Conn_01x03 J?
-U 1 1 5BA6807A
-P 4950 2150
-F 0 "J?" H 5030 2192 50  0000 L CNN
-F 1 "Sensor_Conn_01x03" H 5030 2101 50  0000 L CNN
-F 2 "" H 4950 2150 50  0001 C CNN
-F 3 "~" H 4950 2150 50  0001 C CNN
-	1    4950 2150
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Connector_Generic:Conn_01x02 J?
+L Connector_Generic:Conn_01x02 J2
 U 1 1 5BA6825B
 P 4800 4350
-F 0 "J?" H 4880 4342 50  0000 L CNN
-F 1 "Power_Conn_01x02" H 4880 4251 50  0000 L CNN
-F 2 "" H 4800 4350 50  0001 C CNN
+F 0 "J2" V 5000 4250 50  0000 L CNN
+F 1 "Power_Conn_01x02" V 4900 3950 50  0000 L CNN
+F 2 "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical" H 4800 4350 50  0001 C CNN
 F 3 "~" H 4800 4350 50  0001 C CNN
 	1    4800 4350
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	5600 2900 4850 2900
 $Comp
-L Device:R R?
+L Device:R R1
 U 1 1 5BABD5E1
-P 4850 3200
-F 0 "R?" H 4780 3154 50  0000 R CNN
-F 1 "47k" H 4780 3245 50  0000 R CNN
-F 2 "" V 4780 3200 50  0001 C CNN
-F 3 "~" H 4850 3200 50  0001 C CNN
-	1    4850 3200
-	-1   0    0    1   
+P 9400 1500
+F 0 "R1" V 9500 1550 50  0000 R CNN
+F 1 "47k" V 9300 1550 50  0000 R CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 9330 1500 50  0001 C CNN
+F 3 "~" H 9400 1500 50  0001 C CNN
+	1    9400 1500
+	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	4800 4150 4800 4000
-Wire Wire Line
-	4800 4000 5600 4000
-Wire Wire Line
 	4700 4150 4700 3900
-Wire Wire Line
-	4700 3900 5300 3900
-Wire Wire Line
-	4850 2350 4850 2900
-Wire Wire Line
-	5600 3600 5150 3600
-Wire Wire Line
-	4850 3600 4850 3350
-Wire Wire Line
-	4850 3050 4850 2900
-Connection ~ 4850 2900
-Wire Wire Line
-	7600 2050 7600 2600
-Wire Wire Line
-	7600 2600 7200 2600
-Wire Wire Line
-	7700 2050 7700 2700
-Wire Wire Line
-	7700 2700 7200 2700
-Wire Wire Line
-	4950 2350 4950 2600
-Wire Wire Line
-	4950 2600 5150 2600
-Wire Wire Line
-	5150 2600 5150 3600
-Connection ~ 5150 3600
-Wire Wire Line
-	5150 3600 4850 3600
-Wire Wire Line
-	5050 2350 5300 2350
-Wire Wire Line
-	5300 2350 5300 3900
-Connection ~ 5300 3900
-Wire Wire Line
-	5300 3900 5600 3900
 NoConn ~ 5600 2600
 NoConn ~ 5600 2700
 NoConn ~ 5600 2800
-NoConn ~ 5600 3000
 NoConn ~ 5600 3100
 NoConn ~ 5600 3200
 NoConn ~ 5600 3300
 NoConn ~ 5600 3400
-NoConn ~ 5600 3500
 NoConn ~ 5600 3700
 NoConn ~ 5600 3800
-Text Label 7650 3100 0    50   ~ 0
-диспллей_питаеться_от_5_надо_преобразователь_уровней
+NoConn ~ 7200 3600
+NoConn ~ 7200 3700
+NoConn ~ 7200 3800
+$Comp
+L power:PWR_FLAG #FLG01
+U 1 1 5BB0016D
+P 4700 3800
+F 0 "#FLG01" H 4700 3875 50  0001 C CNN
+F 1 "PWR_FLAG" H 4700 3974 50  0000 C CNN
+F 2 "" H 4700 3800 50  0001 C CNN
+F 3 "~" H 4700 3800 50  0001 C CNN
+	1    4700 3800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4700 3800 4700 3900
+Connection ~ 4700 3900
+$Comp
+L power:PWR_FLAG #FLG02
+U 1 1 5BB007BF
+P 5300 3750
+F 0 "#FLG02" H 5300 3825 50  0001 C CNN
+F 1 "PWR_FLAG" H 5300 3924 50  0000 C CNN
+F 2 "" H 5300 3750 50  0001 C CNN
+F 3 "~" H 5300 3750 50  0001 C CNN
+	1    5300 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3800 2150 3800 3900
+Wire Wire Line
+	3800 3900 4300 3900
+Wire Wire Line
+	3600 2150 3600 2900
+Wire Wire Line
+	3500 2150 3500 3000
+Wire Wire Line
+	3500 3000 5600 3000
+Wire Wire Line
+	3600 2900 5600 2900
+Wire Wire Line
+	4800 4000 4800 4150
+Wire Wire Line
+	4800 4000 3700 4000
+Wire Wire Line
+	3700 4000 3700 2150
+Connection ~ 4800 4000
+$Comp
+L Connector_Generic:Conn_01x03 J5
+U 1 1 5BB256CB
+P 9400 2750
+F 0 "J5" V 9600 2750 50  0000 L CNN
+F 1 "Sensor_Conn_01x03" V 9500 2400 50  0000 L CNN
+F 2 "Connector_JST:JST_PH_B3B-PH-K_1x03_P2.00mm_Vertical" H 9400 2750 50  0001 C CNN
+F 3 "~" H 9400 2750 50  0001 C CNN
+	1    9400 2750
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4800 4000 5300 4000
+Wire Wire Line
+	5300 3750 5300 4000
+Connection ~ 5300 4000
+Wire Wire Line
+	5300 4000 5600 4000
+$Comp
+L Connector_Generic:Conn_01x03 J4
+U 1 1 5BB26B0C
+P 9400 2050
+F 0 "J4" V 9600 2050 50  0000 L CNN
+F 1 "Sensor_Conn_01x03" V 9500 1700 50  0000 L CNN
+F 2 "Connector_JST:JST_PH_B3B-PH-K_1x03_P2.00mm_Vertical" H 9400 2050 50  0001 C CNN
+F 3 "~" H 9400 2050 50  0001 C CNN
+	1    9400 2050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x03 J6
+U 1 1 5BB26B44
+P 9400 3550
+F 0 "J6" V 9600 3550 50  0000 L CNN
+F 1 "Sensor_Conn_01x03" V 9500 3200 50  0000 L CNN
+F 2 "Connector_JST:JST_PH_B3B-PH-K_1x03_P2.00mm_Vertical" H 9400 3550 50  0001 C CNN
+F 3 "~" H 9400 3550 50  0001 C CNN
+	1    9400 3550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x03 J7
+U 1 1 5BB26B82
+P 9400 4400
+F 0 "J7" V 9600 4400 50  0000 L CNN
+F 1 "Sensor_Conn_01x03" V 9500 4050 50  0000 L CNN
+F 2 "Connector_JST:JST_PH_B3B-PH-K_1x03_P2.00mm_Vertical" H 9400 4400 50  0001 C CNN
+F 3 "~" H 9400 4400 50  0001 C CNN
+	1    9400 4400
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x03 J8
+U 1 1 5BB26BB8
+P 9400 5350
+F 0 "J8" V 9600 5350 50  0000 L CNN
+F 1 "Sensor_Conn_01x03" V 9500 5000 50  0000 L CNN
+F 2 "Connector_JST:JST_PH_B3B-PH-K_1x03_P2.00mm_Vertical" H 9400 5350 50  0001 C CNN
+F 3 "~" H 9400 5350 50  0001 C CNN
+	1    9400 5350
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x03 J3
+U 1 1 5BB26BF0
+P 9350 1000
+F 0 "J3" V 9550 1000 50  0000 L CNN
+F 1 "Sensor_Conn_01x03" V 9450 650 50  0000 L CNN
+F 2 "Connector_JST:JST_PH_B3B-PH-K_1x03_P2.00mm_Vertical" H 9350 1000 50  0001 C CNN
+F 3 "~" H 9350 1000 50  0001 C CNN
+	1    9350 1000
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	10250 2250 9500 2250
+Wire Wire Line
+	10250 2250 10250 2950
+Wire Wire Line
+	10250 2950 9500 2950
+Connection ~ 10250 2250
+Connection ~ 10250 2950
+Wire Wire Line
+	9400 2950 9400 3050
+Wire Wire Line
+	9400 3050 10050 3050
+Connection ~ 10050 3050
+Wire Wire Line
+	10050 3050 10050 3150
+$Comp
+L Device:R R2
+U 1 1 5BB29D71
+P 9450 2500
+F 0 "R2" V 9550 2550 50  0000 R CNN
+F 1 "47k" V 9350 2550 50  0000 R CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 9380 2500 50  0001 C CNN
+F 3 "~" H 9450 2500 50  0001 C CNN
+	1    9450 2500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R3
+U 1 1 5BB29D9F
+P 9450 3150
+F 0 "R3" V 9550 3200 50  0000 R CNN
+F 1 "47k" V 9350 3200 50  0000 R CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 9380 3150 50  0001 C CNN
+F 3 "~" H 9450 3150 50  0001 C CNN
+	1    9450 3150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R4
+U 1 1 5BB29DD7
+P 9450 4000
+F 0 "R4" V 9550 4050 50  0000 R CNN
+F 1 "47k" V 9350 4050 50  0000 R CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 9380 4000 50  0001 C CNN
+F 3 "~" H 9450 4000 50  0001 C CNN
+	1    9450 4000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R5
+U 1 1 5BB29E09
+P 9450 4900
+F 0 "R5" V 9550 4950 50  0000 R CNN
+F 1 "47k" V 9350 4950 50  0000 R CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 9380 4900 50  0001 C CNN
+F 3 "~" H 9450 4900 50  0001 C CNN
+	1    9450 4900
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R6
+U 1 1 5BB29E3D
+P 9450 5900
+F 0 "R6" V 9550 5950 50  0000 R CNN
+F 1 "47k" V 9350 5950 50  0000 R CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 9380 5900 50  0001 C CNN
+F 3 "~" H 9450 5900 50  0001 C CNN
+	1    9450 5900
+	0    1    1    0   
+$EndComp
+NoConn ~ 7200 3400
+NoConn ~ 7200 3500
+NoConn ~ 5600 3600
+Wire Wire Line
+	9250 1200 9250 1500
+Wire Wire Line
+	9450 1200 10250 1200
+Wire Wire Line
+	9350 1200 9350 1350
+Wire Wire Line
+	9350 1350 10050 1350
+Wire Wire Line
+	10050 1350 10050 1500
+Wire Wire Line
+	9550 1500 10050 1500
+Connection ~ 10050 1500
+Wire Wire Line
+	10250 1200 10250 2250
+Wire Wire Line
+	10050 1500 10050 2350
+Wire Wire Line
+	9400 2250 9400 2350
+Wire Wire Line
+	9400 2350 10050 2350
+Connection ~ 10050 2350
+Wire Wire Line
+	10050 2350 10050 2500
+Wire Wire Line
+	9600 2500 10050 2500
+Connection ~ 10050 2500
+Wire Wire Line
+	10050 2500 10050 3050
+Wire Wire Line
+	9300 2250 9300 2500
+Wire Wire Line
+	9600 3150 10050 3150
+Connection ~ 10050 3150
+Wire Wire Line
+	9300 2950 9300 3150
+Text GLabel 7700 2250 2    50   Input ~ 0
+GPIO16
+Text GLabel 7750 2400 2    50   Input ~ 0
+GPIO5
+Text GLabel 7750 2550 2    50   Input ~ 0
+GPIO4
+Text GLabel 7750 2700 2    50   Input ~ 0
+GPIO0
+Text GLabel 7750 2850 2    50   Input ~ 0
+GPIO2
+Text GLabel 7700 3300 2    50   Input ~ 0
+GPIO14
+$Comp
+L ESP8266:RobotDyn_NodeMCU U1
+U 1 1 5BA67355
+P 6400 3300
+F 0 "U1" H 6400 4387 60  0000 C CNN
+F 1 "RobotDyn_NodeMCU" H 6400 4281 60  0000 C CNN
+F 2 "ESP8266:RobotDyn_NodeMCU" H 5800 2450 60  0001 C CNN
+F 3 "" H 5800 2450 60  0000 C CNN
+	1    6400 3300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7200 2600 7400 2600
+Wire Wire Line
+	7400 2600 7400 2250
+Wire Wire Line
+	7400 2250 7700 2250
+Wire Wire Line
+	7200 2700 7450 2700
+Wire Wire Line
+	7450 2700 7450 2400
+Wire Wire Line
+	7450 2400 7750 2400
+Wire Wire Line
+	7200 2800 7500 2800
+Wire Wire Line
+	7500 2800 7500 2550
+Wire Wire Line
+	7500 2550 7750 2550
+Wire Wire Line
+	7200 2900 7550 2900
+Wire Wire Line
+	7550 2900 7550 2700
+Wire Wire Line
+	7550 2700 7750 2700
+Wire Wire Line
+	7200 3000 7650 3000
+Wire Wire Line
+	7650 3000 7650 2850
+Wire Wire Line
+	7650 2850 7750 2850
+Wire Wire Line
+	7200 3300 7700 3300
+Wire Wire Line
+	10250 2950 10250 3800
+Wire Wire Line
+	10050 3150 10050 3900
+Wire Wire Line
+	9500 3750 9500 3800
+Wire Wire Line
+	9500 3800 10250 3800
+Connection ~ 10250 3800
+Wire Wire Line
+	10250 3800 10250 4650
+Wire Wire Line
+	9400 3750 9400 3900
+Wire Wire Line
+	9400 3900 10050 3900
+Connection ~ 10050 3900
+Wire Wire Line
+	10050 3900 10050 4000
+Wire Wire Line
+	9300 3750 9300 4000
+Wire Wire Line
+	9600 4000 10050 4000
+Connection ~ 10050 4000
+Wire Wire Line
+	10050 4000 10050 4700
+Wire Wire Line
+	9500 4600 9500 4650
+Wire Wire Line
+	9500 4650 10250 4650
+Wire Wire Line
+	9400 4600 9400 4700
+Wire Wire Line
+	9400 4700 10050 4700
+Connection ~ 10050 4700
+Wire Wire Line
+	10050 4700 10050 4900
+Wire Wire Line
+	9600 4900 10050 4900
+Connection ~ 10050 4900
+Wire Wire Line
+	9300 4600 9300 4900
+Wire Wire Line
+	9500 5550 9500 5600
+Wire Wire Line
+	9500 5600 10250 5600
+Wire Wire Line
+	10250 5600 10250 4650
+Connection ~ 10250 4650
+Wire Wire Line
+	9400 5550 9400 5700
+Wire Wire Line
+	9400 5700 10050 5700
+Wire Wire Line
+	10050 4900 10050 5700
+Wire Wire Line
+	9600 5900 10050 5900
+Wire Wire Line
+	10050 5900 10050 5700
+Connection ~ 10050 5700
+Wire Wire Line
+	9300 5550 9300 5900
+Text GLabel 8900 1500 0    50   Input ~ 0
+GPIO16
+Wire Wire Line
+	9250 1500 8900 1500
+Connection ~ 9250 1500
+Text GLabel 9050 2500 0    50   Input ~ 0
+GPIO5
+Text GLabel 9050 3150 0    50   Input ~ 0
+GPIO4
+Text GLabel 9050 4000 0    50   Input ~ 0
+GPIO0
+Text GLabel 9050 4900 0    50   Input ~ 0
+GPIO2
+Text GLabel 9050 5900 0    50   Input ~ 0
+GPIO14
+Wire Wire Line
+	9050 2500 9300 2500
+Connection ~ 9300 2500
+Wire Wire Line
+	9050 3150 9300 3150
+Connection ~ 9300 3150
+Wire Wire Line
+	9050 4000 9300 4000
+Connection ~ 9300 4000
+Wire Wire Line
+	9050 4900 9300 4900
+Connection ~ 9300 4900
+Wire Wire Line
+	9050 5900 9300 5900
+Connection ~ 9300 5900
+Text GLabel 7750 4050 2    50   Input ~ 0
+3.3V
+Text GLabel 10050 6200 3    50   Input ~ 0
+3.3V
+Wire Wire Line
+	10050 5900 10050 6200
+Connection ~ 10050 5900
+Text GLabel 10250 6200 3    50   Input ~ 0
+GND
+Wire Wire Line
+	10250 5600 10250 6200
+Connection ~ 10250 5600
+Text GLabel 7750 3900 2    50   Input ~ 0
+GND
+NoConn ~ 7200 3100
+Wire Wire Line
+	7750 4050 7450 4050
+Wire Wire Line
+	7450 4050 7450 4000
+Wire Wire Line
+	7450 4000 7200 4000
+Wire Wire Line
+	4700 3900 5600 3900
+Text GLabel 7400 3200 2    50   Input ~ 0
+GND
+Wire Wire Line
+	7200 3200 7400 3200
+Text GLabel 5350 3500 0    50   Input ~ 0
+GND
+Wire Wire Line
+	5350 3500 5600 3500
+Text GLabel 4300 3700 1    50   Input ~ 0
+GND
+Wire Wire Line
+	4300 3700 4300 3900
+Connection ~ 4300 3900
+Wire Wire Line
+	4300 3900 4700 3900
+Wire Wire Line
+	7200 3900 7750 3900
 $EndSCHEMATC
