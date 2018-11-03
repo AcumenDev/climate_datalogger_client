@@ -24,11 +24,8 @@ public:
         tm->display(0, 4);
     }
 
-    void draw() {
-        tm->display(3, 1);
-        tm->display(2, 2);
-        tm->display(1, 3);
-        tm->display(0, 4);
+    void draw(float value) {
+        tm->displayNum(value);
     }
 
 };

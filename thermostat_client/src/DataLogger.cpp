@@ -34,6 +34,7 @@ void DataLogger::loop() {
     } else {
         Serial.println("Error connection");
     }
+    display->draw(value.getValue());
 
     lastTime = millis();
 }
